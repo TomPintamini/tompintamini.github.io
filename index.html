@@ -1,0 +1,124 @@
+ 
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tom Pintamini - Miniature Painting & Scalemodelling</title>
+    <!-- Fancybox CSS für schicke Wisch-Galerie auf Mobile/Desktop -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --text-color: #e0e0e0;
+            --accent-color: #d4af37;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0 40px 0;
+        }
+
+        header img {
+            max-width: 280px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin-top: 15px;
+            color: #ffffff;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .gallery-section {
+            max-width: 1200px;
+            margin: 0 auto 50px auto;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 15px;
+        }
+
+        .grid-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            background-color: var(--card-bg);
+            aspect-ratio: 1 / 1;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            transition: transform 0.2s ease;
+        }
+
+        .grid-item:hover {
+            transform: scale(1.02);
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="logo.jpg" alt="Tom Pintamini Logo">
+        <h1>Miniature Painting & Scalemodelling</h1>
+    </header>
+
+    <main class="gallery-section">
+        <!-- Kategorie 1 -->
+        <h2 class="section-title">Frostpunk Tower</h2>
+        <div class="grid" id="frostpunk-grid"></div>
+
+        <!-- Kategorie 2 -->
+        <h2 class="section-title">Katsuki Basugo</h2>
+        <div class="grid" id="katsuki-grid"></div>
+
+        <!-- Kategorie 3 -->
+        <h2 class="section-title">This War of Mine</h2>
+        <div class="grid" id="thiswar-grid"></div>
+    </main>
+
+    <!-- Fancybox JS für Touch/Wisch-Effekt -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script>
+        // Bildpfade für die jeweiligen Ordner eintragen
+        const galleryData = {
+            'frostpunk-grid': {
+                folder: 'Frostpunk Tower',
+                // Trage hier nach Wunsch die Dateinamen deiner Bilder im Ordner ein
+                images: Array.from({length: 16}, (_, i) => `bild_${i+1}.jpg`) 
+            }
+        };
+
+        Fancybox.bind("[data-fancybox]", {
+            // Galerie-Einstellungen für touch-freundliches Wischen
+        });
+    </script>
+</body>
+</html>
