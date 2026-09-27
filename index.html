@@ -1,11 +1,9 @@
- 
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tom Pintamini - Miniature Painting & Scalemodelling</title>
-    <!-- Fancybox CSS für schicke Wisch-Galerie auf Mobile/Desktop -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
     <style>
         :root {
@@ -35,7 +33,7 @@
         }
 
         h1 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             margin-top: 15px;
             color: #ffffff;
             font-weight: 300;
@@ -69,10 +67,11 @@
             aspect-ratio: 1 / 1;
             box-shadow: 0 4px 10px rgba(0,0,0,0.5);
             transition: transform 0.2s ease;
+            cursor: pointer;
         }
 
         .grid-item:hover {
-            transform: scale(1.02);
+            transform: scale(1.03);
         }
 
         .grid-item img {
@@ -91,33 +90,35 @@
     </header>
 
     <main class="gallery-section">
-        <!-- Kategorie 1 -->
+        <!-- Galerie 1 -->
         <h2 class="section-title">Frostpunk Tower</h2>
-        <div class="grid" id="frostpunk-grid"></div>
+        <div class="grid">
+            <a href="Frostpunk Tower/IMG_20230920_044211.jpg" data-fancybox="frostpunk" class="grid-item">
+                <img src="Frostpunk Tower/IMG_20230920_044211.jpg" alt="Frostpunk Tower">
+            </a>
+        </div>
 
-        <!-- Kategorie 2 -->
-        <h2 class="section-title">Katsuki Basugo</h2>
-        <div class="grid" id="katsuki-grid"></div>
+        <!-- Galerie 2 -->
+        <h2 class="section-title">Katsuki Bakugo</h2>
+        <div class="grid">
+            <a href="Katsuki Basugo/Katsuki 1 (1).jpg" data-fancybox="katsuki" class="grid-item">
+                <img src="Katsuki Basugo/Katsuki 1 (1).jpg" alt="Katsuki Bakugo">
+            </a>
+        </div>
 
-        <!-- Kategorie 3 -->
+        <!-- Galerie 3 -->
         <h2 class="section-title">This War of Mine</h2>
-        <div class="grid" id="thiswar-grid"></div>
+        <div class="grid">
+            <a href="This war of mine/Zz The game.jpg" data-fancybox="thiswar" class="grid-item">
+                <img src="This war of mine/Zz The game.jpg" alt="This War of Mine Table View">
+            </a>
+        </div>
     </main>
 
-    <!-- Fancybox JS für Touch/Wisch-Effekt -->
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <script>
-        // Bildpfade für die jeweiligen Ordner eintragen
-        const galleryData = {
-            'frostpunk-grid': {
-                folder: 'Frostpunk Tower',
-                // Trage hier nach Wunsch die Dateinamen deiner Bilder im Ordner ein
-                images: Array.from({length: 16}, (_, i) => `bild_${i+1}.jpg`) 
-            }
-        };
-
         Fancybox.bind("[data-fancybox]", {
-            // Galerie-Einstellungen für touch-freundliches Wischen
+            // Einstellungen für Touch/Wischgalerie
         });
     </script>
 </body>
